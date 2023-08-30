@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<extension type="plugin" method="upgrade" group="system">
+    <name>plg_mytracker</name>
+    <author>VK Team</author>
+    <authorEmail>info@vk.team</authorEmail>
+    <authorUrl>https://vk.team/</authorUrl>
+    <creationDate>09/07/2023</creationDate>
+    <copyright>VK Team</copyright>
+    <license>GNU General Public License v3.0</license>
+    <version>0.1.4</version>
+    <description>PLG_MYTRACKER_DESCRIPTION</description>
+    <namespace path="src">Joomla\Plugin\System\MyTracker</namespace>
+    <files>
+        <folder plugin="mytracker">src</folder>
+        <folder>services</folder>
+        <filename>mytracker.xml</filename>
+    </files>
+	<languages folder="language" client="administrator">
+		<language tag="ru-RU">ru-RU/plg_system_mytracker.ini</language>
+		<language tag="ru-RU">ru-RU/plg_system_mytracker.sys.ini</language>
+	</languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <!-- https://docs.joomla.org/Standard_form_field_types -->
+                <field
+                        name="counter_id"
+                        type="text"
+                        default=""
+                        label="PLG_MYTRACKER_COUNTER_ID"
+                        description="PLG_MYTRACKER_COUNTER_ID_DESCRIPTION"
+                        size="10"
+                        hint="3308081"
+                />
+            </fieldset>
+			<fieldset name="mytracker_advanced">
+				<field
+					name="domain"
+					type="radio"
+					default="ru"
+					label="PLG_MYTRACKER_DOMAIN"
+					description="PLG_MYTRACKER_DOMAIN_DESCRIPTION"
+				>
+					<option value="ru">RU</option>
+					<option value="com">COM</option>
+				</field>
+				<field
+					name="tracking_user"
+					type="radio"
+					label="PLG_MYTRACKER_TRACKING_USER"
+					description="PLG_MYTRACKER_TRACKING_USER_DESCRIPTION"
+					default="0"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="amp_support"
+					type="radio"
+					label="PLG_MYTRACKER_AMP_SUPPORT"
+					description="PLG_MYTRACKER_AMP_SUPPORT_DESCRIPTION"
+					default="0"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="mytracker_api">
+				<field
+					description="PLG_MYTRACKER_API_DESCRIPTION"
+					name="api"
+					type="note"
+					heading="h3"
+					label="PLG_MYTRACKER_API" />
+				<field
+					name="app_id"
+					type="text"
+					default=""
+					label="PLG_MYTRACKER_APP_ID"
+					description="PLG_MYTRACKER_APP_ID_DESCRIPTION"
+					hint="83018"
+				/>
+				<field
+					name="api_key"
+					type="text"
+					default=""
+					label="PLG_MYTRACKER_API_KEY"
+					description="PLG_MYTRACKER_API_KEY_DESCRIPTION"
+					hint="6jT9Firgf35Z2zDEB0v8ZniAgr8WTq0IcZlecewFWZImrs5KXcRbdDMLgdQj05iO"
+				/>
+				<field
+					name="tracking_login"
+					type="radio"
+					label="PLG_MYTRACKER_TRACKING_LOGIN"
+					description="PLG_MYTRACKER_TRACKING_LOGIN_DESCRIPTION"
+					default="0"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="tracking_registration"
+					type="radio"
+					label="PLG_MYTRACKER_TRACKING_REGISTRATION"
+					description="PLG_MYTRACKER_TRACKING_REGISTRATION_DESCRIPTION"
+					default="0"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="debugging"
+					type="radio"
+					label="PLG_MYTRACKER_DEBUGGING"
+					description="PLG_MYTRACKER_DEBUGGING_DESCRIPTION"
+					default="0"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+        </fields>
+    </config>
+</extension>
