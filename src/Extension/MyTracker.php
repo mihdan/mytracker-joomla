@@ -381,7 +381,7 @@ final class MyTracker extends CMSPlugin implements SubscriberInterface
 		<script type="text/javascript">
 			var _tmr = window._tmr || (window._tmr = []);
 
-			<?php if ($user_id && $tracking_user) : ?>
+			<?php if ($user_id && $tracking_user) : // phpcs:ignore Joomla.ControlStructures.ControlStructuresBrackets.OpenBraceNewLine ?>
 				_tmr.push({ type: 'setUserID', userid: "<?php echo $user_id; ?>" });
 			<?php endif; ?>
 
@@ -408,7 +408,15 @@ final class MyTracker extends CMSPlugin implements SubscriberInterface
 				}
 			})(document, window, "tmr-code");
 		</script>
-		<noscript><div><img src="https://<?php echo $domain; ?>/counter?id=<?php echo $counter_id; ?>;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript>
+		<noscript>
+			<div>
+				<img
+					src="https://<?php echo $domain; ?>/counter?id=<?php echo $counter_id; ?>;js=na"
+					style="position:absolute;left:-9999px;"
+					alt="Top.Mail.Ru"
+				/>
+			</div>
+		</noscript>
 		<!-- /Top.Mail.Ru counter -->
 		<?php
 		$insert = ob_get_contents();

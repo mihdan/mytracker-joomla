@@ -5,6 +5,7 @@
     <!-- What to scan -->
     <file>.</file>
     <exclude-pattern>*/\.github/*</exclude-pattern>
+    <exclude-pattern>*/\.idea/*</exclude-pattern>
     <exclude-pattern>*/\.wordpress-org/*</exclude-pattern>
     <exclude-pattern>*/assets/*</exclude-pattern>
     <exclude-pattern>*/languages/*</exclude-pattern>
