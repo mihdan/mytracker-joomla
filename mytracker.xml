@@ -1,21 +1,27 @@
 <?xml version="1.0"?>
-<extension type="plugin" method="upgrade" group="system">
-    <name>plg_mytracker</name>
+<extension type="plugin" group="system" method="upgrade">
+    <name>PLG_MYTRACKER</name>
     <author>VK Team</author>
     <authorEmail>info@vk.team</authorEmail>
     <authorUrl>https://vk.team/</authorUrl>
     <creationDate>09/07/2023</creationDate>
     <copyright>VK Team</copyright>
-    <license>GNU General Public License v3.0</license>
-    <version>0.1.4</version>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>0.1.0</version>
     <description>PLG_MYTRACKER_DESCRIPTION</description>
-    <namespace path="src">Joomla\Plugin\System\MyTracker</namespace>
+	<updateservers>
+		<server type="extension" priority="1" name="MyTracker">https://joomla.cms-mytracker.ru/index.php?option=com_swjprojects&amp;view=jupdate&amp;element=mytracker&amp;Itemid=101</server>
+	</updateservers>
+	<changelogurl>https://joomla.cms-mytracker.ru/index.php?option=com_swjprojects&amp;view=jchangelog&amp;element=mytracker&amp;Itemid=101</changelogurl>
+	<namespace path="src">Joomla\Plugin\System\MyTracker</namespace>
     <files>
         <folder plugin="mytracker">src</folder>
         <folder>services</folder>
         <filename>mytracker.xml</filename>
     </files>
-	<languages folder="language" client="administrator">
+	<languages folder="language">
+		<language tag="en-GB">en-GB/plg_system_mytracker.ini</language>
+		<language tag="en-GB">en-GB/plg_system_mytracker.sys.ini</language>
 		<language tag="ru-RU">ru-RU/plg_system_mytracker.ini</language>
 		<language tag="ru-RU">ru-RU/plg_system_mytracker.sys.ini</language>
 	</languages>

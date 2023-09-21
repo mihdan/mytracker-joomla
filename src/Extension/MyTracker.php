@@ -5,7 +5,7 @@ declare(strict_types=1);
  *
  * @package   MyTracker
  * @copyright 2023 VK Team
- * @license   GNU General Public License version 3, or later
+ * @license   GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  * @link      https://jpath.ru/docs/output/js-css/kak-pravilno-podklyuchat-javascript-i-css-v-joomla-4
  * @link      https://habr.com/ru/articles/736412/
  * @link      https://habr.com/ru/articles/677262/
