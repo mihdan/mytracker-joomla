@@ -7,12 +7,12 @@
     <creationDate>09/07/2023</creationDate>
     <copyright>VK Team</copyright>
     <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <description>PLG_MYTRACKER_DESCRIPTION</description>
 	<updateservers>
-		<server type="extension" priority="1" name="MyTracker">https://joomla.cms-mytracker.ru/index.php?option=com_swjprojects&amp;view=jupdate&amp;element=mytracker&amp;Itemid=101</server>
+		<server type="extension" priority="1" name="MyTracker">https://joomla.cms-mytracker.ru/index.php?option=com_swjprojects&amp;view=jupdate&amp;element=mytracker</server>
 	</updateservers>
-	<changelogurl>https://joomla.cms-mytracker.ru/index.php?option=com_swjprojects&amp;view=jchangelog&amp;element=mytracker&amp;Itemid=101</changelogurl>
+	<changelogurl>https://joomla.cms-mytracker.ru/index.php?option=com_swjprojects&amp;view=jchangelog&amp;element=mytracker</changelogurl>
 	<namespace path="src">Joomla\Plugin\System\MyTracker</namespace>
     <files>
         <folder plugin="mytracker">src</folder>
@@ -31,12 +31,13 @@
                 <!-- https://docs.joomla.org/Standard_form_field_types -->
                 <field
                         name="counter_id"
-                        type="text"
+                        type="number"
                         default=""
                         label="PLG_MYTRACKER_COUNTER_ID"
                         description="PLG_MYTRACKER_COUNTER_ID_DESCRIPTION"
                         size="10"
                         hint="3308081"
+						required="required"
                 />
             </fieldset>
 			<fieldset name="mytracker_advanced">
@@ -46,6 +47,7 @@
 					default="ru"
 					label="PLG_MYTRACKER_DOMAIN"
 					description="PLG_MYTRACKER_DOMAIN_DESCRIPTION"
+					class="btn-group"
 				>
 					<option value="ru">RU</option>
 					<option value="com">COM</option>
@@ -73,13 +75,7 @@
 					<option value="1">JYES</option>
 				</field>
 			</fieldset>
-			<fieldset name="mytracker_api">
-				<field
-					description="PLG_MYTRACKER_API_DESCRIPTION"
-					name="api"
-					type="note"
-					heading="h3"
-					label="PLG_MYTRACKER_API" />
+			<fieldset name="mytracker_api" label="PLG_MYTRACKER_API" description="PLG_MYTRACKER_API_DESCRIPTION">
 				<field
 					name="app_id"
 					type="text"

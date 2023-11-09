@@ -36,6 +36,19 @@ use Joomla\Http\Http;
  */
 final class MyTracker extends CMSPlugin implements SubscriberInterface
 {
+	/**
+	 * Отключает старый тип вызова событий через рефлексию.
+	 *
+	 * @var boolean
+	 * @since version 0.1.1
+	 */
+	protected $allowLegacyListeners = false;
+
+	/**
+	 * Базовый URL для S2S API.
+	 *
+	 * @since 0.1.0
+	 */
 	const API_BASE = 'https://tracker-s2s.my.com/v1/%s/?idApp=%d';
 
 	/**
@@ -151,9 +164,9 @@ final class MyTracker extends CMSPlugin implements SubscriberInterface
 	public static function getSubscribedEvents(): array
 	{
 		return [
-			'onUserAfterLogin'     => 'onUserLogin',
-			'onUserAfterSave' => 'onUserAfterSave',
-			'onAfterRender'   => 'onAfterRender',
+			'onUserAfterLogin' => 'onUserLogin',
+			'onUserAfterSave'  => 'onUserAfterSave',
+			'onAfterRender'    => 'onAfterRender',
 		];
 	}
 
@@ -473,6 +486,6 @@ final class MyTracker extends CMSPlugin implements SubscriberInterface
 			return false;
 		}
 
-		return false;
+		return true;
 	}
 }
